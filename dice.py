@@ -13,7 +13,7 @@ def rungame(sides):
     result = dice.throw(12)
   return result
 
-num_of_rounds = 500
+num_of_rounds = int(raw_input("How many dice rolls? "))
 results1 = [0] * 13
 results2 = [0] * 13
 
@@ -25,7 +25,6 @@ if __name__ == '__main__':
      result = rungame(12)     
      results2[result] = results2[result] + 1
   for i in range(2, 13):
-     print i, results1[i]*'|'
-  print "################################################"
-  for i in range(2, 13):
-     print i, results2[i]*'|'
+     print "The result for %s is %s%% for two six sided dice and %s%% for one 12 sided dice." % (i, float(results1[i]) / float(num_of_rounds) * 100, float(results2[i]) / float(num_of_rounds) * 100)
+
+
